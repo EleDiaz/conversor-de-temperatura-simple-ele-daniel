@@ -29,7 +29,11 @@
             <tr>
                 <th>Introduzca la temperatura</th>
                 <td>
-                    <input id="tempEntrada" autofocus placeholder="85Far" type="text" onchange="calculate();"/>
+                  <form onsubmit="calculate();">
+                    <fieldset>
+                      <input id="tempEntrada" autofocus placeholder="85Far" type="text" pattern="^([-+]?\d+(?:[\.,]\d*)?)\s*(?:e(\d+))?\s*((f(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?)|(c(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?))$"/>
+                    </fieldset>
+                  </form>
                 </td>
                 <td>
                     <button class="btn" onclick="calculate();">Calcular</button>
