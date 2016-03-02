@@ -1,7 +1,7 @@
 var assert = chai.assert;
 
 suite ('temperatura', function() {
-    test('32e1F = 0e1C', function() {
+    test('32F = 0.00C', function() {
         tempEntrada.value = "32F";
         calculate();
         assert.deepEqual(converted.innerHTML, "0.00C");
