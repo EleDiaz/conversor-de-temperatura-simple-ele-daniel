@@ -13,10 +13,9 @@ function calculate() {
     console.log(m);
     if (m) {
         var num = parseFloat(m.value.replace(',', '.')); // Int
-        console.log (num);
-        var type = m[3][0];                           // String
-        var exp;                                      // String
-        if (!m[2]) {
+        var type = m.word[0];                            // String
+        var exp;                                         // String
+        if (m.exponent) {
             exp = "";
         }else{
             exp = "e" +   parseInt(m[2]);
@@ -32,7 +31,7 @@ function calculate() {
         }
 
         var output; // String
-        if (m[2]){
+        if (m.exponent){
             output = result + exp;
         } else {
             output = result.toFixed(2) + exp;
