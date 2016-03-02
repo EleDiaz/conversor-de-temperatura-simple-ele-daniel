@@ -3,12 +3,17 @@ function calculate() {
     var result;
     var original = document.getElementById("tempEntrada");
     var temp = original.value;
-    var regexp = /^([-+]?\d+(?:[\.,]\d*)?)\s*(?:e([-+]?\d+))?\s*((f(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?)|(c(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?))$/i;
-    //var secondRegex = /^(?:e(\d*))$/;
-    var m = temp.match(regexp);
 
+    var inputRegex = XRegExp ('(?<value>      ^[-+]?\\d+ (?:[\\.,]\\d*)?\\s* )     #captures the number   \n' +
+                              '((e(?<exponent> [-+]?\\d+)\\s*)?)                   #captures the exponent \n' +
+                              '(?<word>      ((f(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?)|' +
+                                            '(c(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?))$ )', 'x');
+
+    var m = XRegExp.exec(temp, inputRegex);
+    console.log(m);
     if (m) {
-        var num = parseFloat(m[1].replace(',', '.')); // Int
+        var num = parseFloat(m.value.replace(',', '.')); // Int
+        console.log (num);
         var type = m[3][0];                           // String
         var exp;                                      // String
         if (!m[2]) {
