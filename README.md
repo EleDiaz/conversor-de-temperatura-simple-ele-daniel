@@ -7,5 +7,8 @@ Se puede acceder a la práctica por medio del siguiente link
 - [Portafolio de Daniel](http://alu0100783230.github.io/)
 - [Portafolio de Eleazar](http://elediaz.github.io/public/portafolio.html)
 - [Enlace a la asignatura](https://campusvirtual.ull.es/1516/course/view.php?id=178)
+- [Enlace a los test de la práctica](http://elediaz.github.io/conversor-de-temperatura-simple-ele-daniel/tests)
+
+
 
 ![](thermometer.png)
