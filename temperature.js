@@ -10,15 +10,15 @@ function calculate() {
                                             '(c(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?))$ )', 'x');
 
     var m = XRegExp.exec(temp, inputRegex);
-    console.log(m);
     if (m) {
         var num = parseFloat(m.value.replace(',', '.')); // Int
         var type = m.word[0];                            // String
         var exp;                                         // String
-        if (m.exponent) {
+
+        if (!m.exponent) {
             exp = "";
         }else{
-            exp = "e" +   parseInt(m[2]);
+            exp = "e" +   parseInt(m.exponent);
         };
 
         if (type == 'c' || type == 'C') {
