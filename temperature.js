@@ -9,7 +9,7 @@ function calculate() {
                               '((e(?<exponent> [-+]?\\d+)\\s*)?)             #captures the exponent \n' +
                               '(?<word>      ((f(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?)|' +
                                              '(c(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?)))' +
-                              '(\\s*)$', 'x');
+                              '(\\s*)$', 'xi');
 
     var m = XRegExp.exec(temp, inputRegex);
     if (m) {
