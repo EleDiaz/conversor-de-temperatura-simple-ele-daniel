@@ -4,10 +4,12 @@ function calculate() {
     var original = document.getElementById("tempEntrada");
     var temp = original.value;
 
-    var inputRegex = XRegExp ('(?<value>      ^[-+]?\\d+ (?:[\\.,]\\d*)?\\s* )     #captures the number   \n' +
-                              '((e(?<exponent> [-+]?\\d+)\\s*)?)                   #captures the exponent \n' +
+    var inputRegex = XRegExp (' ^(\\s*)                                      #whitespaces \n' +
+                              '(?<value> [-+]?\\d+ (?:[\\.,]\\d*)?\\s* )     #captures the number   \n' +
+                              '((e(?<exponent> [-+]?\\d+)\\s*)?)             #captures the exponent \n' +
                               '(?<word>      ((f(?:a(?:h(?:r(?:e(?:n(?:h(?:e(?:i(?:t)?)?)?)?)?)?)?)?)?)|' +
-                                            '(c(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?))$ )', 'x');
+                                             '(c(?:e(?:l(?:s(?:i(?:u(?:s)?)?)?)?)?)?)))' +
+                              '(\\s*)$', 'x');
 
     var m = XRegExp.exec(temp, inputRegex);
     if (m) {
